@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         float forwardInput = Input.GetAxis("Vertical");
         float magnitude = forwardInput * speed * Time.deltaTime;
-        rbPlayer.AddForce(transform.forward * forwardInput * speed * Time.deltaTime, ForceMode.Impulse);
+        rbPlayer.AddForce(focalPoint.transform.forward * magnitude, ForceMode.Impulse);
 
         if(forwardInput > 0)
         {
